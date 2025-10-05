@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Waste Connection</title>
+</head>
+
+<style>
+    @font-face {
+    font-family: myfont;
+    src: url(Reikna.ttf);
+}
+@font-face {
+    font-family: Mylove;
+    src: url(adelia.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f9f1e8;
+    font-family: myfont;
+}
+a {
+    text-decoration: none;
+    color: #574144;
+}
+#header {
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url(background.jpeg);
+    background-position: center;
+    background-size: cover;
+    border: none;
+    border-radius: 40px;
+    
+}
+.container {
+     max-width: 1200px;
+     margin: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 0;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    font-family: serif;
+    font-size: 16px;
+}
+nav .logo {
+    font-size: 30px;
+    color: #574144;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 60px;
+}
+.header-content h1 {
+    font-size: 80px;
+    color: #574144;
+    font-weight: 500;
+     animation:  fadeIn 2s ease-in-out;
+}
+.header-content p {
+    font-family: serif;
+    font-size: 25px;
+    color: #574144;
+    animation:  fadeIn 2s ease-in-out;
+}
+.primary-btn {
+    padding: 10px 24px;
+    background-color: #f9f1e8;
+    color: #574144;
+    border: none;
+    border-radius: 30px;
+    cursor: cell;
+    transition: all 0.3s ease;
+    font-family: serif;
+}
+.primary-btn:hover {
+    background-color: #f9f1e8bc;
+}
+.menu-btn {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    background-color: #f9f1e8;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media only screen and (max-width:520px) {
+    #header {
+        min-height: 50vh;
+    }
+    .header-content h1 {
+        font-size: 32px;
+    }
+    .header-content p {
+        font-size: 32px;
+    }
+    nav ul {
+        position: absolute;
+        top: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: white;
+        width: 80%;
+        height: 100%;
+        align-items: end;
+        padding top: 80px;
+        margin-right: -900px;
+        transition: all .3s ease; 
+    }
+    nav ul.active {
+        margin-right: 0;
+    }
+    nav li {
+        border-bottom: 1px solid #574144;
+        width: 100%;
+        padding:  8P                                                                                                                                                                                  x 16px;
+        text-align: right;
+    }
+}
+
+.about__container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+#about {
+    display: flex;
+    margin-top: 120px;
+    gap: 16px;
+}
+.about {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+}
+.about-image {
+    flex: 1;
+    margin-right: 60px;
+    overflow: hidden;
+}
+.about-image img{
+    max-width:  100%;
+    height: auto;
+    display: block;
+    transition: 0.5s ease;
+}
+.about-image:hover img{
+    transform: scale(1.2);
+}
+.about-content h1 {
+    font-family: MyLove;
+   font-size: 50px;
+   color: #574144;
+   margin-top: 25px;
+   position: relative;
+   animation:  fadeIn 2s ease-in-out;
+}
+.about-content p {
+    font-family: serif;
+   font-size: 18px;
+   color: #574144;
+   margin-bottom: 35px;
+   position: relative;
+   animation:  fadeIn 2s ease-in-out;
+}
+.about-content {
+    flex: 1;
+}
+
+.about__button {
+    text-decoration: none;
+    font-size: var(--small-font-size);
+    font-weight: 500;
+padding: 2px 4px;
+    background-color: #b79ea1;
+    color: #574144;
+    border: none;
+    border-radius: 30px;
+    cursor: cell;
+    transition: all 0.3s ease;
+    font-family: serif;
+}
+
+.about__button:hover {
+    text-decoration: underline;
+}
+
+.service__container {
+    display: grid;
+    place-items: center;
+    margin-inline: 1.5rem;
+    padding-block: 5rem;
+    row-gap: 3.5rem;
+}
+
+.service-title {
+    font-family: MyLove;
+    font-size: 50px;
+    color: #574144;
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+    
+.obat__articel {
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.obat__img {
+    width: 328px;
+    border-radius: 1.5rem;
+}
+
+.obat__data {
+    width: 280px;
+    background-color: #574144;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -9rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+    
+}
+
+.obat__description {
+font-family: serif;
+color: #b79ea1;
+display: block;
+font-size: var(--small-font-size);
+margin-bottom: .25rem;
+}
+
+.obat__tittle {
+font-family: Myfont;
+color: #b79ea1;
+font-size: 40px;
+font-weight: 500;
+margin-bottom: .75rem;
+}
+
+.obat__button {
+    text-decoration: none;
+    font-size: var(--small-font-size);
+    font-weight: 500;
+padding: 2px 4px;
+    background-color: #b79ea1;
+    color: #574144;
+    border: none;
+    border-radius: 30px;
+    cursor: cell;
+    transition: all 0.3s ease;
+    font-family: serif;
+}
+
+.obat__button:hover {
+    text-decoration: underline;
+}
+
+.masker__articel {
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.masker__img {
+    width: 328px;
+    border-radius: 1.5rem;
+}
+
+.masker__data {
+    width: 280px;
+    background-color: #ffe4e1;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -9rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+   
+}
+
+.masker__description {
+font-family: serif;
+color: #bf7e81;
+display: block;
+font-size: var(--small-font-size);
+margin-bottom: .25rem;
+}
+
+.masker__tittle {
+font-family: Myfont;
+color: #bf7e81;
+font-size: 40px;
+font-weight: 500;
+margin-bottom: .75rem;
+}
+
+.masker__button {
+    text-decoration: none;
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    padding: 2px 4px;
+    background-color: #bf7e81;
+    color: #ffe4e1;
+    border: none;
+    border-radius: 30px;
+    cursor: cell;
+    transition: all 0.3s ease;
+    font-family: serif;
+}
+
+.masker__button:hover {
+    text-decoration: underline;
+}
+
+.suntik__articel {
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.suntik__img {
+    width: 328px;
+    border-radius: 1.5rem;
+}
+
+.suntik__data {
+    width: 280px;
+    background-color: #b79ea1;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -9rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+    
+}
+
+.suntik__description {
+font-family: serif;
+color: #f9f1e8;
+display: block;
+font-size: var(--small-font-size);
+margin-bottom: .25rem;
+}
+
+.suntik__tittle {
+font-family: Myfont;
+color: #f9f1e8;
+font-size: 40px;
+font-weight: 500;
+margin-bottom: .75rem;
+}
+
+.suntik__button {
+    text-decoration: none;
+    font-size: var(--small-font-size);
+    font-weight: 500;
+padding: 2px 4px;
+    background-color: #f9f1e8;
+    color: #b79ea1;
+    border: none;
+    border-radius: 30px;
+    cursor: cell;
+    transition: all 0.3s ease;
+    font-family: serif;
+}
+
+.suntik__button:hover {
+    text-decoration: underline;
+}
+
+.obat__articel:hover .obat__data{
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.obat__articel:hover{
+    animation: remove-overflow 2s forwards;
+}
+
+.obat__articel:not(hover){
+    animation: show-overflow 2s forwards;
+}
+
+.obat__articel:not(hover) .obat__data{
+    animation: remove-data 1s forwards;
+}
+
+.masker__articel:hover .masker__data{
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.masker__articel:hover{
+    animation: remove-overflow 2s forwards;
+}
+
+.masker__articel:not(hover){
+    animation: show-overflow 2s forwards;
+}
+
+.masker__articel:not(hover) .masker__data{
+    animation: remove-data 1s forwards;
+}
+
+.suntik__articel:hover .suntik__data{
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.suntik__articel:hover{
+    animation: remove-overflow 2s forwards;
+}
+
+.suntik__articel:not(hover){
+    animation: show-overflow 2s forwards;
+}
+
+.suntik__articel:not(hover) .suntik__data{
+    animation: remove-data 1s forwards;
+}
+
+.blog-title {
+    font-family: MyLove;
+    font-size: 50px;
+    color: #574144;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.blog__container {
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    margin: auto;
+    padding-top: 60px;
+}
+#blog {
+    display: flex;
+    margin-top: 120px;
+    gap: 16px;
+}
+.blog {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.blog-title h1 {
+   font-family: serif;
+   font-size: 30px;
+   color: #574144;
+   margin-top: 25px;
+   position: relative;
+    animation:  fadeIn 2s ease-in-out;
+}
+
+
+.blog-card img {
+    width: 328px;
+    border-radius: 10px;
+    display: block;
+    transition: 0.5s ease;
+    flex: 1;
+    margin-right: 60px;
+    overflow: hidden;
+}
+
+.blog-content h1 {
+    font-family: serif;
+   font-size: 30px;
+   color: #574144;
+   margin-top: 25px;
+   position: relative;
+   animation:  fadeIn 2s ease-in-out;
+}
+.blog-content p {
+    font-family: serif;
+   font-size: 18px;
+   color: #574144;
+   margin-bottom: 35px;
+   position: relative;
+   animation:  fadeIn 2s ease-in-out;
+}
+.blog-content {
+    flex: 1;
+    padding: 10px 0;
+}
+
+.blog-button {
+     text-decoration: none;
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    padding: 2px 4px;
+    background-color: #574144;
+    color: #f9f1e8;
+    border: none;
+    border-radius: 30px;
+    cursor: cell;
+    transition: all 0.3s ease;
+    font-family: serif;
+}
+
+.blog-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.blog-card {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 2px;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+
+
+
+@keyframes show-data{
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(-7rem);
+    }
+}
+
+@keyframes remove-overflow{
+    to{
+        overflow: initial;
+    }
+}
+
+@keyframes remove-data{
+    0%{
+        transform: translateY(-7rem);
+    }
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(.5rem);
+    }
+}
+
+@keyframes show-overflow{
+    0%{
+        overflow: initial;
+        pointer-events: none;
+    }
+    50%{
+        overflow: hidden;
+    }
+}
+
+@media  screen and (max-width: 340px) {
+    .container{
+        margin-inline: 1rem;
+    }
+
+    .obat__data{
+        width: 250px;
+        padding: 1rem6;
+    } 
+
+     .masker__data{
+        width: 250px;
+        padding: 1rem6;
+    } 
+
+     .suntik__data{
+        width: 250px;
+        padding: 1rem6;
+    } 
+
+}
+
+@media screen and (min-width: 768px){
+    .service__container{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1.5rem;
+    }
+
+}
+
+@media screen and (min-width: 1120px){
+    .container{
+        height: 100vh;
+    }
+
+    .service__container{
+        grid-template-columns: repeat(3, 1fr );
+    }
+}
+
+
+
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+    @keyframes appear{
+        from{
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0px  );
+        }
+    }
+
+    .about__container {
+    animation: appear 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+    }
+
+    .service__container {
+    animation: appear 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+    }
+
+    .blog__container {
+    animation: appear 5s linear;
+    animation-timeline: view() ;
+    animation-range: entry 0 cover 40%;
+    }
+
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+         font-family: Myn;
+         src: url(Nandia.ttf);
+        }
+        
+        body {
+            background: #f9f1e8;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        section {
+            padding: 60px 20px;
+        }
+        
+        
+        .quiz__container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 60px auto;
+            max-width: 800px;
+        }
+        
+        .quiz-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: #bf7e81;
+            font-family: Myn;
+        }
+        
+        .quiz-subtitle {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #574144;
+            font-family: serif;
+        }
+        
+        .quiz-progress {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .quiz-progress-bar {
+            height: 100%;
+            background-color: #bf7e81;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .quiz-question {
+            margin-bottom: 30px;
+        }
+        
+        .question-text {
+            font-family: serif;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #574144;
+        }
+        
+        .quiz-options {
+            font-family: serif;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        .quiz-option {
+            background-color: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quiz-option:hover {
+            background-color: #f5e8e8;
+            border-color: #bf7e81;
+        }
+        
+        .quiz-option.selected {   
+            background-color: #edd4d8;
+            border-color: #bf7e81;
+        }
+        
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .quiz-btn {
+            background-color: #bf7e81;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .quiz-btn:hover {
+            background-color: #bf7e81;
+        }
+        
+        .quiz-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        .quiz-result {
+            text-align: center;
+            padding: 30px;
+            display: none;
+        }
+        
+        .result-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #bf7e81;
+            font-family: Myn;
+        }
+        
+        .result-description {
+            margin-bottom: 30px;
+            line-height: 1.8;
+            font-family: serif;
+        }
+        
+        .result-action {
+            display: inline-block;
+            background-color: #bf7e81;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-family: serif;
+            transition: background-color 0.3s;
+        }
+        
+        .result-action:hover {
+            background-color: #bf7e81;
+        }
+        
+        @keyframes appear{
+            from{
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+</style>
+
+<body>
+    <section id="header">
+       <div class="container">
+        <nav>
+            <div class="logo"><h1>MEWCON</h1></div>
+            <ul class="nav links">
+                <li><a href="#header">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#service">service</a></li>
+                <li><a href="#blog">blog</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-content">
+            <h1>MEWCON</h1>
+            <P>Welcome to Medical Waste Connecion</P>
+            <button class="primary-btn" onclick="window.location.href='#quiz'">explore</button>
+        </div>
+       </div>
+    </section>
+
+ <!-- Quiz Section -->
+    <section id="quiz" class="quiz__container">
+        <h1 class="quiz-title">Medical Waste Identification Quiz</h1>
+        <p class="quiz-subtitle">jawablah beberapa pertanyaan ini untuk menentukan metode pengelolahan yang sesuai dengan jenis limbah medis yang ditentukan</p>
+        
+        <div class="quiz-progress">
+            <div class="quiz-progress-bar" id="quiz-progress"></div>
+        </div>
+        
+        <div class="quiz-content">
+            <!-- Question 1 -->
+            <div class="quiz-question active" id="question-1">
+                <h2 class="question-text">apa jenis limbah medis yang akan kamu kelola?</h2>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="obat">pengobatan (pil dan tablet)</div>
+                    <div class="quiz-option" data-value="masker">perlindungan pribadi (masker)</div>
+                    <div class="quiz-option" data-value="suntik">benda tajam (insulin pen)</div>
+                </div>
+            </div>
+            
+            <!-- Question 2 -->
+            <div class="quiz-question" id="question-2">
+                <h2 class="question-text">apakah benda sudah mengalami expired atau sudah lama tidak digunakan?</h2>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="yes">Ya, benda sudah mengalami expired dan sudah lama tidak digunakan?</div>
+                    <div class="quiz-option" data-value="no">tidak, benda masih digunakan</div>
+                    <div class="quiz-option" data-value="unsure">saya kurang pasti</div>
+                </div>
+            </div>
+            
+            <!-- Question 3 -->
+            <div class="quiz-question" id="question-3">
+                <h2 class="question-text">apakah benda sudah terkontaminasi?</h2>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="yes">Ya, benda sudah terkontaminasi</div>
+                    <div class="quiz-option" data-value="no">tidak, benda belum terkontaminasi/belum pernah digunakan</div>
+                    <div class="quiz-option" data-value="unsure">saya kurang pasti</div>
+                </div>
+            </div>
+            
+            <!-- Question 4 -->
+            <div class="quiz-question" id="question-4">
+                <h2 class="question-text">apakah benda memiliki unsur tajam?</h2>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="yes">Ya, benda memiliki unsur tajam</div>
+                    <div class="quiz-option" data-value="no">tidak, benda belum memiliki unsur tajam</div>
+                </div>
+            </div>
+            
+            <!-- Results -->
+            <div class="quiz-result" id="quiz-result">  
+            </div>
+            
+           <div class="quiz-navigation">
+                <button class="quiz-btn" id="prev-btn" disabled>sebelumnya</button>
+                <button class="quiz-btn" id="next-btn">Next</button>
+            </div>
+ 
+        </div>
+    </section>
+ 
+
+    <section id="about" class="about__container">
+        <div class="about-image">
+            <img src="download.png" alt="">
+        </div>
+        <div class="about-content">
+            <h1>welcome to mewcon</h1>
+            <p>
+                hello! selamat datang di medical waste connection. medical waste connection adalah tempat untuk mencari solusi
+                untuk mengelola limbah medis rumah tangga. kami membantu kamu mengelola limbah
+                medis dengan aman dan higenis. Dengan kerja keras yang telah kamu lakukan, kamu telah membantu kami
+                menyelamatkan lingkungan sekitar. untuk mengelola limbah medis, kamu dapat menekan tombol ini.    
+            </p>
+            <a href="#service" class="about__button">explore</a>
+        </div>
+    </section>
+
+    <section class="container">
+        <h1 class="service-title">Our Services</h1>
+        <div class="service__container" id="service">
+            <article class="obat__articel">
+               <img src="obat-expired.jpeg" alt="image" class="obat__img">
+
+               <div class="obat__data">
+                <span class="obat__description">obat yang sudah kadaluwarsa tidak lagi efektif dan bahkan bisa berbahaya jika dikonsumsi</span>
+                    <h2 class="obat__tittle">Obat Kadaluarsa</h2>
+                      <a href="obat.html" class="obat__button">read explore</a>
+               </div>
+            </article>
+
+            <article class="masker__articel">
+               <img src="masker-bekas.jpeg" alt="image" class="masker__img">
+
+               <div class="masker__data">
+                <span class="masker__description">kumpulan masker bekas pakai dan tidak bisa dipakai lagi.</span>
+                    <h2 class="masker__tittle">Masker Bekas</h2>
+                      <a href="masker.html" class="masker__button">explore</a>
+               </div>
+            </article>
+
+            <article class="suntik__articel">
+               <img src="insulin-pen.jpg" alt="image" class="suntik__img">
+
+               <div class="suntik__data">
+                <span class="suntik__description">benda tajam berbahaya yang digunakan dalam metode pengobatan diabetes dengan menyuntik insulin ke dalam tubuh</span>
+                    <h2 class="suntik__tittle">Bekas Suntik Insulin</h2>
+                      <a href="suntik.html" class="suntik__button">explore</a>
+               </div>
+            </article>
+        </div>
+    </section>
+
+     <section id="blog" class="blog__container">
+        <h1 class="blog-title">Our Blog</h1>
+        <div class="blog-slider">
+        <div class="blog-card">
+            <img src="blog1.jpg" alt="">
+        <div class="blog-content">
+            <h1>ALASAN OBAT KADALUARSA PERLU DIKELOLA</h1>
+            <p>
+                Terkadang orang yang sakit membutuhkan beberapa 
+                hal untuk membuat dirinya menjadi sehat Kembali. 
+                Salah satunya dengan meminum obat. Obat adalah bahan atau 
+                Paduan bahan, termasuk produk biologi yang digunakan untuk 
+                memengaruhi atau menyelidiki sistem fisiologi atau keadaan patologi 
+                (Menurut Peraturan Menteri Kesehatan Nomor 34 Tahun 2016). 
+            </p>
+            <a href="exposition1.html" class="blog-button">read me more</a>
+        </div>
+        </div>
+
+         <div class="blog-card">
+            <img src="masque.jpeg" alt="">
+        <div class="blog-content">
+            <h1>MASKER YANG DISALAHGUNAKAN</h1>
+            <p>
+                masker adalah benda yang dipakai di di atas wajah. 
+        Masker biasanya digunakan untuk melindungi diri dari bakteri 
+        dan virus. Masker yang biasanya kita gunakan adalah masker medis 
+        yang memiliki keefektifan 3-4 jam, setelah itu masker sudah tidak efektif 
+        dan sebaiknya di buang ke tempat sampah. 
+            </p>
+            <a href="exposition2.html  " class="blog-button">read me more</a>
+        </div>
+        </div>
+        </div>
+
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+     </section>
+
+     <script>
+        const slider = document.querySelector('.blog-slider');
+        const slides = document.querySelectorAll('.blog-card');
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+        let index = 0;
+
+     function showSlide(i) {
+        if (i < 0) index = slides.length - 1;
+        else if (i >= slides.length) index = 0;
+        else index = i;
+        slider.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+    prev.addEventListener('click', () => showSlide(index - 1));
+    next.addEventListener('click', () => showSlide(index + 1));
+</script>
+
+ <script>
+        // Quiz functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.quiz-question');
+            const options = document.querySelectorAll('.quiz-option');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const progressBar = document.getElementById('quiz-progress');
+            const resultDiv = document.getElementById('quiz-result');
+            const quizContent = document.getElementById('.quiz-content');
+            
+            let currentQuestion = 0;
+            let answers = {};
+            
+            // Initialize quiz
+            updateQuiz();
+            
+            // Option selection
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options in current question
+                    const currentOptions = this.parentElement.querySelectorAll('.quiz-option');
+                    currentOptions.forEach(opt => opt.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                    
+                    // Store answer
+                    const questionId = this.closest('.quiz-question').id;
+                    answers[questionId] = this.getAttribute('data-value');
+                    
+                    // Enable next button
+                    nextBtn.disabled = false;
+
+                    if(currentQuestion === question.length-1){
+                        setTimeout(showResults,500);// small delay for better UX
+                    }
+                });
+            });
+            
+            // Next button
+            nextBtn.addEventListener('click', function() {
+                if (currentQuestion < questions.length - 1) {
+                    currentQuestion++;
+                    updateQuiz();
+                } else {
+                    showResults();
+                }
+            });
+            
+            // Previous button
+            prevBtn.addEventListener('click', function() {
+                if (currentQuestion > 0) {
+                    currentQuestion--;
+                    updateQuiz();
+                }
+            });
+            
+            function updateQuiz() {
+                // Hide all questions
+                questions.forEach(question => {
+                    question.classList.remove('active');
+                });
+                
+                // Show current question
+                questions[currentQuestion].classList.add('active');
+                
+                // Update progress bar
+                const progress = ((currentQuestion + 1) / questions.length) * 100;
+                progressBar.style.width = `${progress}%`;
+                
+                // Update button states
+                prevBtn.disabled = currentQuestion === 0;
+                
+                if (currentQuestion === questions.length - 1) {
+                    nextBtn.textContent = 'See Results';
+                } else {
+                    nextBtn.textContent = 'Next';
+                }
+                
+                // Disable next button if no option selected
+                const currentOptions = questions[currentQuestion].querySelectorAll('.quiz-option');
+                const hasSelection = Array.from(currentOptions).some(opt => opt.classList.contains('selected'));
+                nextBtn.disabled = !hasSelection;
+            }
+            
+            function showResults() {
+                // Hide questions and navigation
+                document.querySelector('.quiz-content').style.display = 'none';
+                document.querySelector('.quiz-navigation').style.display = 'none';
+                
+                // Determine waste type based on answers
+                let wasteType = 'other';
+                let description = '';
+                let actionLink = '#service';
+                
+                if (answers['question-1'] === 'obat') {
+                    wasteType = 'Expired Medication';
+                    description = 'Based on your answers, you have expired or unused medication. These should be properly disposed of to prevent accidental ingestion or environmental contamination. Never flush medications down the toilet or throw them in regular trash.';
+                    actionLink = 'obat.html';
+                } else if (answers['question-1'] === 'masker') {
+                    wasteType = 'Used Protective Equipment';
+                    description = 'Based on your answers, you have used personal protective equipment like masks or gloves. These items can harbor pathogens and should be disposed of properly to prevent the spread of infection.';
+                    actionLink = 'masker.html';
+                } else if (answers['question-1'] === 'suntik') {
+                    wasteType = 'Sharp Medical Objects';
+                    description = 'Based on your answers, you have sharp medical objects like needles or syringes. These pose a serious puncture risk and potential for disease transmission. They require special puncture-proof containers for safe disposal.';
+                    actionLink = 'suntik.html';
+                } else {
+                    wasteType = 'General Medical Waste';
+                    description = 'Based on your answers, you have general medical supplies that need proper disposal. Even non-sharp, non-hazardous medical waste should be handled carefully to maintain hygiene and prevent contamination.';
+                    actionLink = '#service';
+                }
+                
+                // Display results
+                resultDiv.innerHTML = `
+                    <h2 class="result-title">Recommended Disposal: ${wasteType}</h2>
+                    <p class="result-description">${description}</p>
+                    <a href="${actionLink}" class="result-action">Learn Proper Disposal Methods</a>
+                `;
+                resultDiv.style.display = 'block';
+            }
+        });
+     </script>
+
+
+</body>
+</html>
